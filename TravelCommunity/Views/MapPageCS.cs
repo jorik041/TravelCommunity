@@ -71,7 +71,8 @@ namespace TravelCommunity.Views
             Media = new List<PinMedia>();
 
             client = new HttpClient();
-            uri = new Uri("https://api.instagram.com/v1/users/217783145/media/recent?access_token=217783145.ff04465.e645f7fa04024ffc922e95d671ab9cab");
+	    /// Need to use your access token 
+            uri = new Uri("YOUR ACCESS TOKEN");
             result = await client.GetStringAsync(uri);
             RecentMedia = JsonConvert.DeserializeObject<InstagramModel>(result);
 
