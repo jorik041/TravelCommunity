@@ -182,3 +182,4 @@ FakesAssemblies/
 *.userprefs
 
 .DS_Store
+.vs/TravelCommunity/xs/UserPrefs.xml
