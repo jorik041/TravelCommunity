@@ -43,12 +43,17 @@
     <Compile Include="Views\AppStartPage.xaml.cs">
       <DependentUpon>AppStartPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Models\OAuthSettings.cs" />
+    <Compile Include="Resources\Client.Designer.cs">
+      <DependentUpon>Client.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\InstagramLogin.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\" />
-    <Folder Include="ViewModels\" />
     <Folder Include="Models\" />
     <Folder Include="Custom\" />
+    <Folder Include="Resources\" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json">
@@ -90,6 +95,10 @@
     <EmbeddedResource Include="Views\AppStartPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Client.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Client.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />

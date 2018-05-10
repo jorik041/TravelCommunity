@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>2.0</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <data name="ClientId" xml:space="preserve">
+        <value>ff0446541e3e4fa4b97863b6c3e23638</value>
+    </data>
+    <data name="Scope" xml:space="preserve">
+        <value>basic</value>
+    </data>
+    <data name="AuthorizeUrl" xml:space="preserve">
+        <value>https://api.instagram.com/oauth/authorize/</value>
+    </data>
+     <data name="RedirectUrl" xml:space="preserve">
+        <value>https://aimore.github.io/</value>
+    </data>
+</root>

@@ -19,3 +19,5 @@
 /Users/ais/Desktop/TravelCommunity/TravelCommunity/TravelCommunity/obj/Debug/TravelCommunity.csproj.CoreCompileInputs.cache
 /Users/ais/Desktop/TravelCommunity/TravelCommunity/TravelCommunity/obj/Debug/TravelCommunity.dll
 /Users/ais/Desktop/TravelCommunity/TravelCommunity/TravelCommunity/obj/Debug/TravelCommunity.pdb
+/Users/ais/Desktop/TravelCommunity/TravelCommunity/TravelCommunity/obj/Debug/TravelCommunity.Resources.Client.resources
+/Users/ais/Desktop/TravelCommunity/TravelCommunity/TravelCommunity/obj/Debug/TravelCommunity.csproj.GenerateResource.Cache

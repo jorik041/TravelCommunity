@@ -15,12 +15,6 @@ namespace TravelCommunity.iOS
         {
             global::Xamarin.Forms.Forms.Init();
 
-            Xamarin.Auth.Presenters.OAuthLoginPresenter.PlatformLogin = (authenticator) =>
-            {
-                var oAuthLogin = new OAuthLoginPresenter();
-               oAuthLogin.Login(authenticator);
-            };
-
             LoadApplication(new App());
             AnimationViewRenderer.Init();
             return base.FinishedLaunching(app, options);
