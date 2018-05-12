@@ -61,6 +61,7 @@ namespace TravelCommunity
         protected override void OnStart()
         {
             // Handle when your app starts
+			return;
         }
 
         protected override void OnSleep()
@@ -89,7 +90,7 @@ namespace TravelCommunity
         }
 
         // Allows the LoginPageRenderers to signal the app to pop off the login modal.
-        public async static Task PerformSuccessfulLoginAction()
+        public static void PerformSuccessfulLoginAction()
         {
 			//await _NavPage.Navigation.PushAsync(new MapPageCS());
 			_NavPage = new NavigationPage(new MapPageCS());

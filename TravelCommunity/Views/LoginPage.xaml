@@ -48,6 +48,10 @@
                 VerticalOptions="Center"
                 HeightRequest="50"
                 WidthRequest="80">
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer
+                    Tapped="OnLoginButtonTapped"/>
+                </StackLayout.GestureRecognizers>
                 <Image 
                     Source="instagram_logo.png" 
                     Aspect="AspectFit"

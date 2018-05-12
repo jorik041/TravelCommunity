@@ -24,6 +24,7 @@ namespace TravelCommunity.Views
         Grid container;
         private string result;
         private CustomPin pin;
+		private string accessToken { get; set; }
 
         #region Constructor
         /// <summary>
@@ -70,11 +71,21 @@ namespace TravelCommunity.Views
 		async Task JsonResult()
         {
             Media = new List<PinMedia>();
-
+			if (Application.Current.Properties.ContainsKey("access_token"))
+            {
+				var token = Application.Current.Properties["access_token"] as string;
+				// do something with id
+				accessToken = token;
+            }
+			else 
+			{
+				accessToken = "217783145.ff04465.e645f7fa04024ffc922e95d671ab9cab";
+			}
             client = new HttpClient();
-            /// Need to use your access token
-            string accesrequest = "https://api.instagram.com/v1/users/217783145/media/recent?access_token=217783145.ff04465.e645f7fa04024ffc922e95d671ab9cab";
-            uri = new Uri(accesrequest);
+			/// Need to use your access token
+			//string accesrequest = "https://api.instagram.com/v1/users/217783145/media/recent?access_token=217783145.ff04465.e645f7fa04024ffc922e95d671ab9cab";
+			string accessUrl = TravelCommunity.Resources.Client.GetRecentMediaUrl + accessToken;
+			uri = new Uri(accessUrl);
             result = await client.GetStringAsync(uri);
             RecentMedia = JsonConvert.DeserializeObject<InstagramModel>(result);
 

@@ -32,7 +32,7 @@ namespace TravelCommunity.iOS
                     authorizeUrl: new Uri(App.XamarinAuthSettings.AuthorizeUrl), // the auth URL for the service
                     redirectUrl: new Uri(App.XamarinAuthSettings.RedirectUrl)); // the redirect URL for the service
 
-                auth.Completed += async (sender, eventArgs) => {
+                auth.Completed += (sender, eventArgs) => {
                     if (eventArgs.IsAuthenticated)
                     {
                         // Use eventArgs.Account to do wonderful things
@@ -41,7 +41,7 @@ namespace TravelCommunity.iOS
 						Xamarin.Forms.Application.Current.Properties["access_token"] = token;
                         //Xamarin.Forms.Application.Current.Properties["token"] = token;
                         App.UserAccessToken = token;
-                        await App.PerformSuccessfulLoginAction();
+                        App.PerformSuccessfulLoginAction();
                     }
                     else
                     {

@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+
 namespace TravelCommunity.Models
 {
     public class PinMedia

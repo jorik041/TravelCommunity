@@ -24,4 +24,7 @@
      <data name="RedirectUrl" xml:space="preserve">
         <value>https://aimore.github.io/</value>
     </data>
+      <data name="GetRecentMediaUrl" xml:space="preserve">
+        <value>https://api.instagram.com/v1/users/217783145/media/recent?access_token=</value>
+    </data>
 </root>

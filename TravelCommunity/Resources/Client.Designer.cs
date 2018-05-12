@@ -70,5 +70,11 @@ namespace TravelCommunity.Resources {
                 return ResourceManager.GetString("RedirectUrl", resourceCulture);
             }
         }
+        
+        internal static string GetRecentMediaUrl {
+            get {
+                return ResourceManager.GetString("GetRecentMediaUrl", resourceCulture);
+            }
+        }
     }
 }
