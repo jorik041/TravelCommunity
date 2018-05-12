@@ -17,8 +17,6 @@ namespace TravelCommunity.Views
         private string result;
         private CustomPin pin;
         TapGestureRecognizer _tapGestureRecognizer;
-        public static INavigation Navigation { get; set; }
-        static NavigationPage _NavPage;
 
 
         public LoginPage()
@@ -48,8 +46,10 @@ namespace TravelCommunity.Views
             //_NavPage = new NavigationPage(new InstagramLogin());
             //Application.Current.MainPage = new MapPageCS();
 
-            _NavPage = new NavigationPage(new InstagramLogin());
-            Navigation = _NavPage.Navigation;
+			App._NavPage = new NavigationPage(new InstagramLogin());
+			App.Navigation = App._NavPage.Navigation;
+			Application.Current.MainPage = App._NavPage;
+			//await Navigation.PushModalAsync(_NavPage);
         }
 
 

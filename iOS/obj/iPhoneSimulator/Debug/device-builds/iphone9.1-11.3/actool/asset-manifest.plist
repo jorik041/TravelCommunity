@@ -6,16 +6,16 @@
 	<dict>
 		<key>output-files</key>
 		<array>
-			<string>/Users/ais/Desktop/TravelCommunity/TravelCommunity/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone9.1-11.3/actool/bundle/AppIcon20x20@2x.png</string>
-			<string>/Users/ais/Desktop/TravelCommunity/TravelCommunity/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone9.1-11.3/actool/bundle/AppIcon20x20@3x.png</string>
-			<string>/Users/ais/Desktop/TravelCommunity/TravelCommunity/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone9.1-11.3/actool/bundle/AppIcon29x29@2x.png</string>
-			<string>/Users/ais/Desktop/TravelCommunity/TravelCommunity/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone9.1-11.3/actool/bundle/AppIcon29x29@3x.png</string>
-			<string>/Users/ais/Desktop/TravelCommunity/TravelCommunity/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone9.1-11.3/actool/bundle/AppIcon40x40@2x.png</string>
-			<string>/Users/ais/Desktop/TravelCommunity/TravelCommunity/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone9.1-11.3/actool/bundle/AppIcon40x40@3x.png</string>
-			<string>/Users/ais/Desktop/TravelCommunity/TravelCommunity/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone9.1-11.3/actool/bundle/AppIcon60x60@2x.png</string>
-			<string>/Users/ais/Desktop/TravelCommunity/TravelCommunity/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone9.1-11.3/actool/bundle/AppIcon60x60@3x.png</string>
-			<string>/Users/ais/Desktop/TravelCommunity/TravelCommunity/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone9.1-11.3/actool/bundle/Assets.car</string>
-			<string>/Users/ais/Desktop/TravelCommunity/TravelCommunity/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone9.1-11.3/actool/partial-info.plist</string>
+			<string>/Volumes/HD/TravelCommunityApp/TravelCommunity/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone9.1-11.3/actool/bundle/AppIcon20x20@2x.png</string>
+			<string>/Volumes/HD/TravelCommunityApp/TravelCommunity/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone9.1-11.3/actool/bundle/AppIcon20x20@3x.png</string>
+			<string>/Volumes/HD/TravelCommunityApp/TravelCommunity/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone9.1-11.3/actool/bundle/AppIcon29x29@2x.png</string>
+			<string>/Volumes/HD/TravelCommunityApp/TravelCommunity/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone9.1-11.3/actool/bundle/AppIcon29x29@3x.png</string>
+			<string>/Volumes/HD/TravelCommunityApp/TravelCommunity/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone9.1-11.3/actool/bundle/AppIcon40x40@2x.png</string>
+			<string>/Volumes/HD/TravelCommunityApp/TravelCommunity/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone9.1-11.3/actool/bundle/AppIcon40x40@3x.png</string>
+			<string>/Volumes/HD/TravelCommunityApp/TravelCommunity/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone9.1-11.3/actool/bundle/AppIcon60x60@2x.png</string>
+			<string>/Volumes/HD/TravelCommunityApp/TravelCommunity/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone9.1-11.3/actool/bundle/AppIcon60x60@3x.png</string>
+			<string>/Volumes/HD/TravelCommunityApp/TravelCommunity/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone9.1-11.3/actool/bundle/Assets.car</string>
+			<string>/Volumes/HD/TravelCommunityApp/TravelCommunity/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone9.1-11.3/actool/partial-info.plist</string>
 		</array>
 	</dict>
 	<key>com.apple.actool.document.warnings</key>
@@ -26,7 +26,7 @@
 				<string>./AppIcon.appiconset</string>
 			</array>
 			<key>catalog</key>
-			<string>/Users/ais/Desktop/TravelCommunity/TravelCommunity/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone9.1-11.3/actool/cloned-assets/Assets.xcassets</string>
+			<string>/Volumes/HD/TravelCommunityApp/TravelCommunity/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone9.1-11.3/actool/cloned-assets/Assets.xcassets</string>
 			<key>message</key>
 			<string>A 76x76@1x app icon is required for iPad apps targeting iOS 7, 8, and 9</string>
 			<key>type</key>
@@ -38,7 +38,7 @@
 				<string>./AppIcon.appiconset</string>
 			</array>
 			<key>catalog</key>
-			<string>/Users/ais/Desktop/TravelCommunity/TravelCommunity/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone9.1-11.3/actool/cloned-assets/Assets.xcassets</string>
+			<string>/Volumes/HD/TravelCommunityApp/TravelCommunity/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone9.1-11.3/actool/cloned-assets/Assets.xcassets</string>
 			<key>message</key>
 			<string>A 76x76@2x app icon is required for iPad apps targeting iOS 7.0 and later</string>
 			<key>type</key>
@@ -50,7 +50,7 @@
 				<string>./AppIcon.appiconset</string>
 			</array>
 			<key>catalog</key>
-			<string>/Users/ais/Desktop/TravelCommunity/TravelCommunity/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone9.1-11.3/actool/cloned-assets/Assets.xcassets</string>
+			<string>/Volumes/HD/TravelCommunityApp/TravelCommunity/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone9.1-11.3/actool/cloned-assets/Assets.xcassets</string>
 			<key>message</key>
 			<string>A 83.5x83.5@2x app icon is required for iPad apps targeting iOS 9.0 and later</string>
 			<key>type</key>
@@ -62,7 +62,7 @@
 				<string>./AppIcon.appiconset</string>
 			</array>
 			<key>catalog</key>
-			<string>/Users/ais/Desktop/TravelCommunity/TravelCommunity/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone9.1-11.3/actool/cloned-assets/Assets.xcassets</string>
+			<string>/Volumes/HD/TravelCommunityApp/TravelCommunity/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone9.1-11.3/actool/cloned-assets/Assets.xcassets</string>
 			<key>message</key>
 			<string>A 1024x1024 app store icon is required for iOS apps</string>
 			<key>type</key>

@@ -37,11 +37,11 @@ namespace TravelCommunity.iOS
                     {
                         // Use eventArgs.Account to do wonderful things
                         //App.CompleteLogin(eventArgs.Account.Properties["access_token"]);
-                        await App.PerformSuccessfulLoginAction();
-                        string token = eventArgs.Account.Properties["access_token"].ToString();
-                        Xamarin.Forms.Application.Current.Properties["token"] = token;
+						string token = eventArgs.Account.Properties["access_token"].ToString();
+						Xamarin.Forms.Application.Current.Properties["access_token"] = token;
+                        //Xamarin.Forms.Application.Current.Properties["token"] = token;
                         App.UserAccessToken = token;
-
+                        await App.PerformSuccessfulLoginAction();
                     }
                     else
                     {

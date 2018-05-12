@@ -32,6 +32,7 @@ namespace TravelCommunity.Views
         public MapPageCS()
         {
             CreateContent();
+			NavigationPage.SetHasNavigationBar(this, false);
         }
 
         #endregion

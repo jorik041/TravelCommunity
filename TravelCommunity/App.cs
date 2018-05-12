@@ -8,7 +8,7 @@ namespace TravelCommunity
 {
     public class App : Application
     {
-        static NavigationPage _NavPage;
+        public static NavigationPage _NavPage;
 
         public static  INavigation Navigation { get;  set; }
 
@@ -55,7 +55,7 @@ namespace TravelCommunity
             Navigation = _NavPage.Navigation;
 
             // set the app's main page, which in this case is a NAvigationPage.
-            MainPage = _NavPage;
+			MainPage = new AppStartPage();
         }
 
         protected override void OnStart()
@@ -91,7 +91,10 @@ namespace TravelCommunity
         // Allows the LoginPageRenderers to signal the app to pop off the login modal.
         public async static Task PerformSuccessfulLoginAction()
         {
-            await _NavPage.Navigation.PopModalAsync();
+			//await _NavPage.Navigation.PushAsync(new MapPageCS());
+			_NavPage = new NavigationPage(new MapPageCS());
+			Navigation = _NavPage.Navigation;
+			Current.MainPage = _NavPage;
         }
     }
 }
