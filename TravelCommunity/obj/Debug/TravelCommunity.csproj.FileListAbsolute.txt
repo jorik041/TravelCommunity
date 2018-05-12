@@ -16,8 +16,8 @@
 /Users/ais/Desktop/TravelCommunity/TravelCommunity/TravelCommunity/bin/Debug/Xamarin.Forms.Xaml.xml
 /Users/ais/Desktop/TravelCommunity/TravelCommunity/TravelCommunity/bin/Debug/Xamarin.Forms.Maps.xml
 /Users/ais/Desktop/TravelCommunity/TravelCommunity/TravelCommunity/bin/Debug/Lottie.Forms.pdb
+/Users/ais/Desktop/TravelCommunity/TravelCommunity/TravelCommunity/obj/Debug/TravelCommunity.Resources.Client.resources
+/Users/ais/Desktop/TravelCommunity/TravelCommunity/TravelCommunity/obj/Debug/TravelCommunity.csproj.GenerateResource.Cache
 /Users/ais/Desktop/TravelCommunity/TravelCommunity/TravelCommunity/obj/Debug/TravelCommunity.csproj.CoreCompileInputs.cache
 /Users/ais/Desktop/TravelCommunity/TravelCommunity/TravelCommunity/obj/Debug/TravelCommunity.dll
 /Users/ais/Desktop/TravelCommunity/TravelCommunity/TravelCommunity/obj/Debug/TravelCommunity.pdb
-/Users/ais/Desktop/TravelCommunity/TravelCommunity/TravelCommunity/obj/Debug/TravelCommunity.Resources.Client.resources
-/Users/ais/Desktop/TravelCommunity/TravelCommunity/TravelCommunity/obj/Debug/TravelCommunity.csproj.GenerateResource.Cache

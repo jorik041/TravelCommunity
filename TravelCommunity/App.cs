@@ -51,11 +51,11 @@ namespace TravelCommunity
                     redirectUrl: "https://aimore.github.io/");
 
             // Hold on to the NavigationPage as a static, so that we can easily access it via App later.
-            _NavPage = new NavigationPage(new LoginPage());
+            _NavPage = new NavigationPage(new InstagramLogin());
             Navigation = _NavPage.Navigation;
 
             // set the app's main page, which in this case is a NAvigationPage.
-            MainPage = new AppStartPage();
+            MainPage = _NavPage;
         }
 
         protected override void OnStart()

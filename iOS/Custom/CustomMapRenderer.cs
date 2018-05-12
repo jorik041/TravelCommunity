@@ -49,6 +49,7 @@ namespace TravelCommunity.iOS.Custom
             }
         }
 
+        //Bindable properties
         MKAnnotationView GetViewForAnnotation(MKMapView mapView, IMKAnnotation annotation)
         {
             MKAnnotationView annotationView = null;

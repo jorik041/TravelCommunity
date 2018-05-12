@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Net.Http;
+using System.Threading.Tasks;
 using TravelCommunity.Models;
 using Xamarin.Forms;
 
@@ -16,7 +17,7 @@ namespace TravelCommunity.Views
         private string result;
         private CustomPin pin;
         TapGestureRecognizer _tapGestureRecognizer;
-
+        public static INavigation Navigation { get; set; }
         static NavigationPage _NavPage;
 
 
@@ -34,20 +35,21 @@ namespace TravelCommunity.Views
             {
                 await LoginButton.ScaleTo(0.95, 50, Easing.CubicOut);
                 await LoginButton.ScaleTo(1, 50, Easing.CubicIn);
-                LoginButton.IsEnabled = false;
+                //LoginButton.IsEnabled = false;
                 NavigateToMap();
             };
 
             LoginButton.GestureRecognizers.Add(_tapGestureRecognizer);
         }
 
-        private void NavigateToMap()
+        async private void NavigateToMap()
         {
             //await JsonResult();
             //_NavPage = new NavigationPage(new InstagramLogin());
-            this.Navigation.PushAsync(new InstagramLogin());
+            //Application.Current.MainPage = new MapPageCS();
 
-            //App.Navigation = _NavPage.Navigation;
+            _NavPage = new NavigationPage(new InstagramLogin());
+            Navigation = _NavPage.Navigation;
         }
 
 

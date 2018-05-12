@@ -71,8 +71,9 @@ namespace TravelCommunity.Views
             Media = new List<PinMedia>();
 
             client = new HttpClient();
-	    /// Need to use your access token 
-            uri = new Uri("YOUR ACCESS TOKEN");
+            /// Need to use your access token
+            string accesrequest = "https://api.instagram.com/v1/users/217783145/media/recent?access_token=217783145.ff04465.e645f7fa04024ffc922e95d671ab9cab";
+            uri = new Uri(accesrequest);
             result = await client.GetStringAsync(uri);
             RecentMedia = JsonConvert.DeserializeObject<InstagramModel>(result);
 
@@ -92,7 +93,7 @@ namespace TravelCommunity.Views
                 }
             }
             Debug.WriteLine("Performing some startup work that takes a bit of time.");
-            await Task.Delay(2000); // Simulate a bit of startup work.
+            await Task.Delay(3000); // Simulate a bit of startup work.
             Debug.WriteLine("Startup work is finished - starting MainActivity.");
             FillMap();
         }
