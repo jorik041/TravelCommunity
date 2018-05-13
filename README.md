@@ -1,7 +1,7 @@
 # TravelCommunity Xamarin App
 
 > **IMPORTANT NOTE:** You must get your access Instagram access token. See the [Instagram Developer page](https://www.instagram.com/developer/) for complete instructions.
-The App works for now just for iOS only.
+For now the App works only for iOS.
 
 Lottie animation framework
 -----------------------------
