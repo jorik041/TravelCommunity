@@ -48,6 +48,7 @@
       <DependentUpon>Client.resx</DependentUpon>
     </Compile>
     <Compile Include="Views\InstagramLogin.cs" />
+    <Compile Include="Models\UserModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\" />

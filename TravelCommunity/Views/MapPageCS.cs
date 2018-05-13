@@ -8,6 +8,7 @@ using Newtonsoft.Json;
 using TravelCommunity.Models;
 using Xamarin.Forms;
 using Xamarin.Forms.Maps;
+using TravelCommunity.Resources;
 
 namespace TravelCommunity.Views
 {
@@ -19,12 +20,15 @@ namespace TravelCommunity.Views
         private CustomMap customMap;
         AnimationView progressView;
         private InstagramModel RecentMedia;
+        private UserModel UserData;
         private List<PinMedia> Media { get; set; }
         private Uri uri;
         Grid container;
         private string result;
+        private string UserId { get; set; }
+        private string GetRecentMediaUrl { get; set; }
         private CustomPin pin;
-		private string accessToken { get; set; }
+        private string accessToken { get; set; }
 
         #region Constructor
         /// <summary>
@@ -32,8 +36,9 @@ namespace TravelCommunity.Views
         /// </summary>
         public MapPageCS()
         {
+            Debug.WriteLine("Constructor coming");
             CreateContent();
-			NavigationPage.SetHasNavigationBar(this, false);
+            NavigationPage.SetHasNavigationBar(this, false);
         }
 
         #endregion
@@ -52,18 +57,36 @@ namespace TravelCommunity.Views
         }
 
 
-		protected override void OnAppearing()
-		{
+        protected override void OnAppearing()
+        {
+            Debug.WriteLine("OnAppering coming");
             Device.BeginInvokeOnMainThread(async () =>
             {
-                await JsonResult();
+                await CheckUser();
 
             });
-		}
+        }
 
-		#endregion
+        #endregion
 
-		#region private methods
+        #region private methods
+
+        async Task CheckUser()
+        {
+            if (Application.Current.Properties.ContainsKey("access_token") && !(Application.Current.Properties.ContainsKey("userID")) )
+            {
+                accessToken = Application.Current.Properties["access_token"] as string;
+                await GetUserID();
+                // do something with id
+            }
+            else
+            {
+                accessToken = Client.DefaultAccessToken;
+                UserId = Client.DefaultUserID;
+                await JsonResult();
+            }
+        }
+
 
 		/// <summary>
 		/// Jsons the result.
@@ -71,21 +94,11 @@ namespace TravelCommunity.Views
 		async Task JsonResult()
         {
             Media = new List<PinMedia>();
-			if (Application.Current.Properties.ContainsKey("access_token"))
-            {
-				var token = Application.Current.Properties["access_token"] as string;
-				// do something with id
-				accessToken = token;
-            }
-			else 
-			{
-				accessToken = "217783145.ff04465.e645f7fa04024ffc922e95d671ab9cab";
-			}
             client = new HttpClient();
 			/// Need to use your access token
-			//string accesrequest = "https://api.instagram.com/v1/users/217783145/media/recent?access_token=217783145.ff04465.e645f7fa04024ffc922e95d671ab9cab";
-			string accessUrl = TravelCommunity.Resources.Client.GetRecentMediaUrl + accessToken;
-			uri = new Uri(accessUrl);
+            //string accessUrl = "https://api.instagram.com/v1/users/3032568183/media/recent?access_token=3032568183.ff04465.4ad8960fe586448ea5661b75c081963f";
+            //GetRecentMediaUrl = Client.GetRecentMediaBaseUrl + UserId + Client.GetRecentMediaEndPoint + accessToken;
+            uri = new Uri(GetRecentMediaUrl);
             result = await client.GetStringAsync(uri);
             RecentMedia = JsonConvert.DeserializeObject<InstagramModel>(result);
 
@@ -182,6 +195,26 @@ namespace TravelCommunity.Views
             container.Children.Add(customMap);
             container.Children.Add(stack);
             Content = container;
+        }
+
+        async Task GetUserID()
+        {
+            client = new HttpClient();
+            string userIDUrl = TravelCommunity.Resources.Client.GetUserIDUrl + accessToken;
+            Uri userUri = new Uri(userIDUrl);
+            result = await client.GetStringAsync(userUri);
+            UserData = new UserModel();
+            UserData = JsonConvert.DeserializeObject<UserModel>(result);
+            if (UserData.data.id != null)
+            {
+                UserId = UserData.data.id;
+                Application.Current.Properties["userID"] = UserId;
+            } else
+            {
+                UserId = Client.DefaultUserID;
+            }
+            GetRecentMediaUrl = Client.GetRecentMediaBaseUrl + UserId + Client.GetRecentMediaEndPoint + accessToken;
+            await JsonResult();
         }
 
         #endregion

@@ -26,7 +26,6 @@ namespace TravelCommunity.Views
 			if (Application.Current.Properties.ContainsKey("access_token"))
             {
                 System.Diagnostics.Debug.WriteLine("User has access token");
-				var token = Application.Current.Properties["access_token"] as string;
                 // do something with id
 				Application.Current.MainPage = new MapPageCS();
             }

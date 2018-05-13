@@ -24,7 +24,19 @@
      <data name="RedirectUrl" xml:space="preserve">
         <value>https://aimore.github.io/</value>
     </data>
-      <data name="GetRecentMediaUrl" xml:space="preserve">
-        <value>https://api.instagram.com/v1/users/217783145/media/recent?access_token=</value>
+      <data name="GetRecentMediaBaseUrl" xml:space="preserve">
+        <value>https://api.instagram.com/v1/users/</value>
+    </data>
+    <data name="DefaultUserID" xml:space="preserve">
+        <value>217783145</value>
+    </data>
+    <data name="DefaultAccessToken" xml:space="preserve">
+        <value>217783145.ff04465.e645f7fa04024ffc922e95d671ab9cab</value>
+    </data>
+    <data name="GetRecentMediaEndPoint" xml:space="preserve">
+        <value>/media/recent?access_token=</value>
+    </data>
+    <data name="GetUserIDUrl" xml:space="preserve">
+        <value>https://api.instagram.com/v1/users/self/?access_token=</value>
     </data>
 </root>

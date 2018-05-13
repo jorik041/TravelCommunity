@@ -9,11 +9,11 @@ namespace TravelCommunity.Views
 {
     public partial class LoginPage : ContentPage
     {
-        private HttpClient client;
-        private InstagramModel RecentMedia;
+        //private HttpClient client;
+        //private InstagramModel RecentMedia;
         private List<PinMedia> PinList { get; set; }
-        private Uri uri;
-        private string result;
+        //private Uri uri;
+        //private string result;
         //TapGestureRecognizer _tapGestureRecognizer;
 
 
@@ -47,10 +47,18 @@ namespace TravelCommunity.Views
             //await JsonResult();
             //_NavPage = new NavigationPage(new InstagramLogin());
             //Application.Current.MainPage = new MapPageCS();
-
-			App._NavPage = new NavigationPage(new InstagramLogin());
-			App.Navigation = App._NavPage.Navigation;
-			Application.Current.MainPage = App._NavPage;
+            if(Application.Current.Properties.ContainsKey("access_token"))
+            {
+                App._NavPage = new NavigationPage(new MapPageCS());
+                App.Navigation = App._NavPage.Navigation;
+                Application.Current.MainPage = App._NavPage;
+            } else
+            {
+                App._NavPage = new NavigationPage(new InstagramLogin());
+                App.Navigation = App._NavPage.Navigation;
+                Application.Current.MainPage = App._NavPage;   
+            }
+			
 			//await Navigation.PushModalAsync(_NavPage);
         }
 

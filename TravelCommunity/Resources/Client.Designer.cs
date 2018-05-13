@@ -71,9 +71,33 @@ namespace TravelCommunity.Resources {
             }
         }
         
-        internal static string GetRecentMediaUrl {
+        internal static string GetRecentMediaBaseUrl {
             get {
-                return ResourceManager.GetString("GetRecentMediaUrl", resourceCulture);
+                return ResourceManager.GetString("GetRecentMediaBaseUrl", resourceCulture);
+            }
+        }
+        
+        internal static string DefaultUserID {
+            get {
+                return ResourceManager.GetString("DefaultUserID", resourceCulture);
+            }
+        }
+        
+        internal static string DefaultAccessToken {
+            get {
+                return ResourceManager.GetString("DefaultAccessToken", resourceCulture);
+            }
+        }
+        
+        internal static string GetRecentMediaEndPoint {
+            get {
+                return ResourceManager.GetString("GetRecentMediaEndPoint", resourceCulture);
+            }
+        }
+        
+        internal static string GetUserIDUrl {
+            get {
+                return ResourceManager.GetString("GetUserIDUrl", resourceCulture);
             }
         }
     }

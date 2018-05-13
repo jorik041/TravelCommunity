@@ -1,5 +1,22 @@
 ﻿<Properties StartupConfiguration="{CBCFFFFA-882E-429D-994A-30E86512B948}|Default">
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="TravelCommunity/Views/AppStartPage.xaml.cs">
+    <Files>
+      <File FileName="TravelCommunity/Views/MapPageCS.cs" Line="102" Column="1" />
+      <File FileName="TravelCommunity/Views/LoginPage.xaml.cs" Line="50" Column="54" />
+      <File FileName="iOS/LoginPageRenderer.cs" Line="41" Column="52" />
+      <File FileName="TravelCommunity/Views/AppStartPage.xaml.cs" Line="29" Column="48" />
+    </Files>
+    <Pads>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State>
+          <Value>response</Value>
+          <Value>accessToken</Value>
+          <Value>accessToken</Value>
+          <Value>userIDUrl</Value>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
@@ -9,7 +26,7 @@
   <DisabledProjects>
     <String>Droid/TravelCommunity.Droid.csproj</String>
   </DisabledProjects>
-  <MonoDevelop.Ide.ItemProperties.TravelCommunity.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.00585E2E-3EF6-4F35-A551-1320730D2BC8">
+  <MonoDevelop.Ide.ItemProperties.TravelCommunity.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.2E498C3C-A77B-4446-BCE7-41AAC7442260">
     <MonoDevelop.MacDev.AppleDevelopmentTeam />
   </MonoDevelop.Ide.ItemProperties.TravelCommunity.iOS>
 </Properties>
