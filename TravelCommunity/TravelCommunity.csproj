@@ -55,6 +55,9 @@
     <Compile Include="Helper\Reachability.cs" />
     <Compile Include="Custom\InstagramLogin.cs" />
     <Compile Include="Helper\IClearCookies.cs" />
+    <Compile Include="Views\ErrorPage.xaml.cs">
+      <DependentUpon>ErrorPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\" />
@@ -110,6 +113,10 @@
       <LastGenOutput>Client.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Test\CustomMKAnnotationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ErrorPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

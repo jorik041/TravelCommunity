@@ -18,7 +18,7 @@ namespace TravelCommunity.iOS.Helper
             foreach (var cookie in CookieStorage.Cookies)
             {
                 CookieStorage.DeleteCookie(cookie);
-                Debug.WriteLine("Cookie" + cookie.Name.ToString() + "Deleted/n" );
+                Debug.WriteLine("Cookie" + cookie.Name.ToString() + "Deleted" );
             }
             Debug.WriteLine("Total of cookies: " + CookieStorage.Cookies.Length.ToString());
         }

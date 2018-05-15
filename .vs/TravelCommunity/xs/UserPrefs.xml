@@ -1,23 +1,19 @@
 ﻿<Properties StartupConfiguration="{CBCFFFFA-882E-429D-994A-30E86512B948}|Default">
-  <MonoDevelop.Ide.Workbench>
-    <Pads>
-      <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State>
-          <Value>sender</Value>
-        </State>
-      </Pad>
-    </Pads>
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/Helper/IClearCookiesImplementation.cs">
+    <Files>
+      <File FileName="TravelCommunity/Views/ErrorPage.xaml.cs" Line="11" Column="6" />
+      <File FileName="iOS/Helper/IClearCookiesImplementation.cs" Line="1" Column="1" />
+      <File FileName="TravelCommunity/App.cs" Line="52" Column="34" />
+      <File FileName="TravelCommunity/Views/AppStartPage.xaml.cs" Line="30" Column="51" />
+      <File FileName="TravelCommunity/Views/LoginPage.xaml.cs" Line="14" Column="16" />
+    </Files>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/Users/ais/Desktop/TravelCommunity/TravelCommunity/TravelCommunity/Views/MapPageCS.cs" relfile="TravelCommunity/Views/MapPageCS.cs" line="152" column="1" />
       <Breakpoint file="/Users/ais/Desktop/TravelCommunity/TravelCommunity/TravelCommunity/Views/MapPageCS.cs" relfile="TravelCommunity/Views/MapPageCS.cs" line="153" column="1" />
-      <Breakpoint file="/Users/ais/Desktop/TravelCommunity/TravelCommunity/TravelCommunity/Views/MapPageCS.cs" relfile="TravelCommunity/Views/MapPageCS.cs" line="90" column="1" />
-      <Breakpoint file="/Users/ais/Desktop/TravelCommunity/TravelCommunity/TravelCommunity/Views/MapPageCS.cs" relfile="TravelCommunity/Views/MapPageCS.cs" line="84" column="1" />
-      <Breakpoint file="/Users/ais/Desktop/TravelCommunity/TravelCommunity/TravelCommunity/Views/MapPageCS.cs" relfile="TravelCommunity/Views/MapPageCS.cs" line="78" column="1" />
-      <Breakpoint file="/Users/ais/Desktop/TravelCommunity/TravelCommunity/iOS/Custom/LoginPageRenderer.cs" relfile="iOS/Custom/LoginPageRenderer.cs" line="39" column="1" />
-      <Breakpoint file="/Users/ais/Desktop/TravelCommunity/TravelCommunity/iOS/Custom/LoginPageRenderer.cs" relfile="iOS/Custom/LoginPageRenderer.cs" line="54" column="1" />
+      <Breakpoint file="/Users/ais/Desktop/TravelCommunity/TravelCommunity/iOS/Helper/IClearCookiesImplementation.cs" relfile="iOS/Helper/IClearCookiesImplementation.cs" line="23" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
@@ -25,7 +21,7 @@
   <DisabledProjects>
     <String>Droid/TravelCommunity.Droid.csproj</String>
   </DisabledProjects>
-  <MonoDevelop.Ide.ItemProperties.TravelCommunity.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.2D1A323A-BA7F-4DDF-A108-CF4C53E3D9EB">
+  <MonoDevelop.Ide.ItemProperties.TravelCommunity.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.d175d792e3dd06f024edb981bd2cc3a2dd708d7f">
     <MonoDevelop.MacDev.AppleDevelopmentTeam />
   </MonoDevelop.Ide.ItemProperties.TravelCommunity.iOS>
 </Properties>

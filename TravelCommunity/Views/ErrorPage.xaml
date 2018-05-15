@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="TravelCommunity.Views.ErrorPage">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition
+                Height="*" />
+            <RowDefinition
+                Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Grid
+            Grid.Row="0"
+            VerticalOptions="Center"
+            HorizontalOptions="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition
+                    Height="60*" />
+                <RowDefinition
+                    Height="40*" />
+            </Grid.RowDefinitions>
+
+
+            <!--ICON BACKGROUND-->
+            <Image
+                Source="https://i.imgur.com/bSMu6vK.png"
+                Grid.Row="0"
+                Aspect="AspectFit"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                Opacity="0.8"/>
+
+            <!--ICON BACKGROUND-->
+       <!--     <Label
+                Grid.Row="0"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                FontSize="180"
+                Opacity="0.1" />    
+-->
+            <!--ICON-->
+          <!--  <Label
+                Grid.Row="0"
+                FontSize="100"
+                HorizontalTextAlignment="Center"
+                VerticalOptions="Center"
+                HorizontalOptions="Center" />-->
+
+                
+            <!--TEXT -->
+            <StackLayout
+                Grid.Row="1"
+                VerticalOptions="Center"
+                Padding="60,0"
+                Spacing="2">
+                
+                <Label
+                    Text="Ops, something went wrong"
+                    HorizontalTextAlignment="Center"
+                    HorizontalOptions="Center"
+                    FontSize="24"
+                    FontAttributes="Bold" />
+                
+                <Label
+                    Text="try again later"
+                    HorizontalTextAlignment="Center"
+                    Opacity="0.8"
+                    FontSize="18" />
+            </StackLayout>
+
+        </Grid>
+
+        <!--BUTTON-->
+        <Button 
+          Grid.Row="1"
+            VerticalOptions="End"
+            Margin="20"
+            CornerRadius="10"
+            BackgroundColor="Silver"
+            HorizontalOptions="FillAndExpand"
+            Text="Back to Login" />
+    </Grid>
+</ContentPage>
