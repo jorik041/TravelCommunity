@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="TravelCommunity.Views.LoginPage">
+             x:Class="TravelCommunity.Views.LoginPage"
+             xmlns:custom="clr-namespace:TravelCommunity.Custom">
     <ContentPage.Content>
         <Grid x:Name="LoginContainer"
             HorizontalOptions="FillAndExpand"
@@ -46,20 +47,28 @@
                     <TapGestureRecognizer
                     Tapped="OnLoginButtonTapped"/>
                 </StackLayout.GestureRecognizers>
-                <Image 
-                    Source="instagram_logo.png" 
+                <custom:ImageCircle
+                    x:Name="LoginImage"
+                    IsRounded="true"
+                    BorderThickness="0"
+                    Source="https://scontent.cdninstagram.com/vp/406a7077ab84c596b9560febaddfaaa6/5B797691/t51.2885-19/s150x150/29402824_525644661170130_1505494455107452928_n.jpg"
                     Aspect="AspectFit"
                     HorizontalOptions="Center"
                     VerticalOptions="Center"/>
+                <!--<Image 
+                    Source="instagram_logo.png" 
+                    Aspect="AspectFit"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"/>-->
             </StackLayout>
              <!-- login notification text-->
             <Label x:Name="LoginNotification"
-                Text="Login with Instagram"
-                FontSize="14"
-                TextColor="White"
-                Grid.Row="4"
-                VerticalOptions="Start"
-                HorizontalOptions="Center">
+                    Text="aimorezin 🇧🇷🇩🇪"
+                    FontSize="14"
+                    TextColor="White"
+                    Grid.Row="4"
+                    VerticalOptions="Start"
+                    HorizontalOptions="Center">
             </Label>
         </Grid>
     </ContentPage.Content>

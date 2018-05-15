@@ -29,6 +29,9 @@ namespace TravelCommunity.Views {
         private global::Xamarin.Forms.StackLayout LoginButton;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
+        private global::TravelCommunity.Custom.ImageCircle LoginImage;
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private global::Xamarin.Forms.Label LoginNotification;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
@@ -38,6 +41,7 @@ namespace TravelCommunity.Views {
             LoginIcon = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Image>(this, "LoginIcon");
             LogoImage = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Image>(this, "LogoImage");
             LoginButton = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.StackLayout>(this, "LoginButton");
+            LoginImage = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::TravelCommunity.Custom.ImageCircle>(this, "LoginImage");
             LoginNotification = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Label>(this, "LoginNotification");
         }
     }

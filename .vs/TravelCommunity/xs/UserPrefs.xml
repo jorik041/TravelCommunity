@@ -1,7 +1,8 @@
 ﻿<Properties StartupConfiguration="{CBCFFFFA-882E-429D-994A-30E86512B948}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="TravelCommunity/Views/MapPageCS.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="TravelCommunity/Views/LoginPage.xaml.cs">
     <Files>
-      <File FileName="TravelCommunity/Views/MapPageCS.cs" Line="113" Column="32" />
+      <File FileName="TravelCommunity/Views/LoginPage.xaml" Line="59" Column="29" />
+      <File FileName="TravelCommunity/Views/LoginPage.xaml.cs" Line="21" Column="23" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

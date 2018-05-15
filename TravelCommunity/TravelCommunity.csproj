@@ -58,6 +58,7 @@
     <Compile Include="Views\ErrorPage.xaml.cs">
       <DependentUpon>ErrorPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Custom\ImageCircle.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\" />

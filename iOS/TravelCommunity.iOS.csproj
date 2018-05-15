@@ -158,6 +158,7 @@
     <Compile Include="Helper\CustomVideoPlayer.cs" />
     <Compile Include="Custom\LoginPageRenderer.cs" />
     <Compile Include="Helper\IClearCookiesImplementation.cs" />
+    <Compile Include="Custom\ImageCircleRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\pin.png" />
