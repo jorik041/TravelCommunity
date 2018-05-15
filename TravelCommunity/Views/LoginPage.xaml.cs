@@ -35,7 +35,7 @@ namespace TravelCommunity.Views
         /// </summary>
         private void NavigateToMap()
         {
-            DependencyService.Get<IClearCookies>().Clear();
+            //DependencyService.Get<IClearCookies>().Clear();
             App._NavPage = new NavigationPage(new InstagramLogin());
             App.Navigation = App._NavPage.Navigation;
             Application.Current.MainPage = App._NavPage;

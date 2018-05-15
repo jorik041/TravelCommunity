@@ -74,6 +74,7 @@
         <!--BUTTON-->
         <Button 
           Grid.Row="1"
+            Clicked="Handle_Clicked"
             VerticalOptions="End"
             Margin="20"
             CornerRadius="10"

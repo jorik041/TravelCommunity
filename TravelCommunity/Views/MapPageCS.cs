@@ -101,32 +101,42 @@ namespace TravelCommunity.Views
 		/// </summary>
 		private async Task JsonResult()
         {
-            Media = new List<PinMedia>();
-            client = new HttpClient();
-			/// Need to use your access token
-            GetRecentMediaUrl = Client.GetRecentMediaBaseUrl + UserId + Client.GetRecentMediaEndPoint + accessToken;
-            uri = new Uri(GetRecentMediaUrl);
-            result = await client.GetStringAsync(uri);
-            RecentMedia = JsonConvert.DeserializeObject<InstagramModel>(result);
-
-            foreach (var item in RecentMedia.data)
-            {
-                PinMedia cada = new PinMedia();
-                if (item.images.standard_resolution.url != null)
+			try
+			{
+    			Media = new List<PinMedia>();
+                client = new HttpClient();
+                /// Need to use your access token
+                GetRecentMediaUrl = Client.GetRecentMediaBaseUrl + UserId + Client.GetRecentMediaEndPoint + accessToken;
+                uri = new Uri(GetRecentMediaUrl);
+                result = await client.GetStringAsync(uri);
+                RecentMedia = JsonConvert.DeserializeObject<InstagramModel>(result);
+				if (RecentMedia.data.Count == 0)
+					ShowErrorPage();
+                foreach (var item in RecentMedia.data)
                 {
-                    cada.ImageUrl = item.images.standard_resolution.url;
+                    PinMedia cada = new PinMedia();
+                    if (item.images.standard_resolution.url != null)
+                    {
+                        cada.ImageUrl = item.images.standard_resolution.url;
+                    }
+                    if (item.location != null)
+                    {
+                        cada.Latitude = item.location.latitude;
+                        cada.Longitude = item.location.longitude;
+                        cada.LocationName = item.location.name;
+                        if (item.caption.text != null)
+                            cada.CaptionText = item.caption.text;
+                        Media.Add(cada);
+                    }
                 }
-                if (item.location != null)
-                {
-                    cada.Latitude = item.location.latitude;
-                    cada.Longitude = item.location.longitude;
-                    cada.LocationName = item.location.name;
-                    if (item.caption.text != null)
-                        cada.CaptionText = item.caption.text;
-                    Media.Add(cada);
-                }
-            }
-            FillMap();
+                FillMap();
+			} 
+			catch(Exception ex)
+			{
+				Debug.WriteLine(ex.Message);
+				ShowErrorPage();
+			}
+            
         }
 
         /// <summary>
@@ -235,7 +245,7 @@ namespace TravelCommunity.Views
 
         private void ShowErrorPage()
         {
-            
+			Application.Current.MainPage = new ErrorPage();
         }
         #endregion
     }

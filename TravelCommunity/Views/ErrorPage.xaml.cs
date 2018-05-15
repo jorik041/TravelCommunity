@@ -12,6 +12,11 @@ namespace TravelCommunity.Views
         public ErrorPage()
         {
             InitializeComponent();
-        }
+		}
+
+		void Handle_Clicked(object sender, System.EventArgs e)
+		{
+			Application.Current.MainPage = new LoginPage();
+		}
     }
 }
