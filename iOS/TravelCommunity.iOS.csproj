@@ -139,6 +139,7 @@
   <ItemGroup>
     <Folder Include="Resources\" />
     <Folder Include="Custom\" />
+    <Folder Include="Helper\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -153,19 +154,22 @@
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Custom\CustomMapRenderer.cs" />
     <Compile Include="Custom\CustomMKAnnotationView.cs" />
-    <Compile Include="LoginPageRenderer.cs" />
+    <Compile Include="Helper\FormsViewToNativeiOS.cs" />
+    <Compile Include="Helper\CustomVideoPlayer.cs" />
+    <Compile Include="Custom\LoginPageRenderer.cs" />
+    <Compile Include="Helper\IClearCookiesImplementation.cs" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\pin.png" />
     <BundleResource Include="Resources\background.png" />
     <BundleResource Include="Resources\icon.png" />
-    <BundleResource Include="Resources\instabtn.png" />
     <BundleResource Include="Resources\instagram_logo.png" />
     <BundleResource Include="Resources\logo.png" />
     <BundleResource Include="Resources\world_locations.json" />
     <BundleResource Include="Resources\Plane.json" />
     <BundleResource Include="Resources\mapPin%403x.png" />
     <BundleResource Include="Resources\mapPin%402x.png" />
+    <BundleResource Include="Resources\test.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.3.0.0.446417\build\netstandard2.0\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.3.0.0.446417\build\netstandard2.0\Xamarin.Forms.targets')" />

@@ -1,7 +1,7 @@
 ﻿using System;
+using Foundation;
+using TravelCommunity.Custom;
 using TravelCommunity.iOS;
-using TravelCommunity.Views;
-using UIKit;
 using Xamarin.Auth;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
@@ -14,7 +14,7 @@ namespace TravelCommunity.iOS
     {
 
         bool IsShown;
-
+        OAuth2Authenticator auth;
 
 		public override void ViewDidAppear(bool animated)
         {
@@ -26,7 +26,7 @@ namespace TravelCommunity.iOS
 
                 IsShown = true;
 
-                var auth = new OAuth2Authenticator(
+                    auth = new OAuth2Authenticator(
                     clientId: App.XamarinAuthSettings.ClientId, // your OAuth2 client id
                     scope: App.XamarinAuthSettings.Scope, // The scopes for the particular API you're accessing. The format for this will vary by API.
                     authorizeUrl: new Uri(App.XamarinAuthSettings.AuthorizeUrl), // the auth URL for the service
@@ -36,27 +36,26 @@ namespace TravelCommunity.iOS
                     if (eventArgs.IsAuthenticated)
                     {
                         // Use eventArgs.Account to do wonderful things
-                        //App.CompleteLogin(eventArgs.Account.Properties["access_token"]);
 						string token = eventArgs.Account.Properties["access_token"].ToString();
 						Xamarin.Forms.Application.Current.Properties["access_token"] = token;
-                        //Xamarin.Forms.Application.Current.Properties["token"] = token;
                         App.UserAccessToken = token;
                         App.PerformSuccessfulLoginAction();
                     }
                     else
                     {
+                        App.PerformCancelLogin();
                         // The user cancelled
                     }
                 };
 
                 var frame = auth.GetUI();
-
                 PresentViewController(frame, true, null);
-                //TODO find out how to set the tip padding
+
+                }
+                //TODO find out how to set the top padding
                 //frame.View.Bounds = new CoreGraphics.CGRect(100, 100, 80, 30);
 
             }
         }
-    }
 }
 

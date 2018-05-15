@@ -47,14 +47,22 @@
     <Compile Include="Resources\Client.Designer.cs">
       <DependentUpon>Client.resx</DependentUpon>
     </Compile>
-    <Compile Include="Views\InstagramLogin.cs" />
     <Compile Include="Models\UserModel.cs" />
+    <Compile Include="Test\CustomMKAnnotationView.xaml.cs">
+      <DependentUpon>CustomMKAnnotationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Test\VideoPlayer.cs" />
+    <Compile Include="Helper\Reachability.cs" />
+    <Compile Include="Custom\InstagramLogin.cs" />
+    <Compile Include="Helper\IClearCookies.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\" />
     <Folder Include="Models\" />
     <Folder Include="Custom\" />
     <Folder Include="Resources\" />
+    <Folder Include="Test\" />
+    <Folder Include="Helper\" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json">
@@ -100,6 +108,10 @@
     <EmbeddedResource Include="Resources\Client.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Client.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Test\CustomMKAnnotationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />

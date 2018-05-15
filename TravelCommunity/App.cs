@@ -3,6 +3,8 @@ using System;
 using System.Threading.Tasks;
 using TravelCommunity.Models;
 using TravelCommunity.Views;
+using TravelCommunity.Test;
+using TravelCommunity.Helper;
 
 namespace TravelCommunity
 {
@@ -14,12 +16,6 @@ namespace TravelCommunity
 
         public static  OAuthSettings XamarinAuthSettings { get; set; }
 
-        /// <summary>
-        /// A static intance of IInstagramClient.
-        /// </summary>
-        /// <value>The Instagram client.</value>
-        /// <remarks>Not the cleanest way to use the Instagram, but it works. IoC/DI would be better (and recommended), but this app is meant to be simple.</remarks>
-        //public static IInstagramClient InstagramClient { get; private set; }
         public static string UserAccessToken { get; set; }
 
         public static bool IsAuthenticated
@@ -45,17 +41,18 @@ namespace TravelCommunity
 
             XamarinAuthSettings =
                 new OAuthSettings(
-                    clientId: "ff0446541e3e4fa4b97863b6c3e23638",
+                    clientId: TravelCommunity.Resources.Client.ClientId,
                     scope: "basic",
                     authorizeUrl: "https://api.instagram.com/oauth/authorize/",
                     redirectUrl: "https://aimore.github.io/");
 
             // Hold on to the NavigationPage as a static, so that we can easily access it via App later.
-            _NavPage = new NavigationPage(new InstagramLogin());
-            Navigation = _NavPage.Navigation;
-
-            // set the app's main page, which in this case is a NAvigationPage.
-			MainPage = new AppStartPage();
+            //_NavPage = new NavigationPage(new InstagramLogin());
+            //Navigation = _NavPage.Navigation;
+            MainPage = new AppStartPage();
+            //var page = new ContentPage();
+            //page.Content = new VideoPlayer();
+            //MainPage = page;
         }
 
         protected override void OnStart()
@@ -96,6 +93,17 @@ namespace TravelCommunity
 			_NavPage = new NavigationPage(new MapPageCS());
 			Navigation = _NavPage.Navigation;
 			Current.MainPage = _NavPage;
+        }
+
+        public static void PerformCancelLogin()
+        {
+            var MyAppsFirstPage = new LoginPage();
+            Application.Current.MainPage = new NavigationPage(MyAppsFirstPage);
+
+            //and from then on you
+
+            Application.Current.MainPage.Navigation.PushAsync(new ContentPage());
+            Application.Current.MainPage.Navigation.PopAsync(); //Remove the page currently on top.
         }
     }
 }

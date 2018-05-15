@@ -56,14 +56,12 @@ namespace TravelCommunity.Views
             _height = height;
         }
 
-
         protected override void OnAppearing()
         {
             Debug.WriteLine("OnAppering coming");
             Device.BeginInvokeOnMainThread(async () =>
             {
                 await CheckUser();
-
             });
         }
 
@@ -71,7 +69,11 @@ namespace TravelCommunity.Views
 
         #region private methods
 
-        async Task CheckUser()
+        /// <summary>
+        /// Checks the user.
+        /// </summary>
+        /// <returns>The user.</returns>
+        private async Task CheckUser()
         {
             if (Application.Current.Properties.ContainsKey("access_token") && !(Application.Current.Properties.ContainsKey("userID")) )
             {
@@ -79,25 +81,30 @@ namespace TravelCommunity.Views
                 await GetUserID();
                 // do something with id
             }
+            else if(Application.Current.Properties.ContainsKey("access_token") && (Application.Current.Properties.ContainsKey("userID")))
+            {
+                accessToken = Application.Current.Properties["access_token"] as string;
+                UserId = Application.Current.Properties["userID"] as string;
+                await JsonResult();
+            }
             else
             {
+                //TODO create error page inside navigation go back to login button
                 accessToken = Client.DefaultAccessToken;
                 UserId = Client.DefaultUserID;
                 await JsonResult();
             }
         }
 
-
 		/// <summary>
 		/// Jsons the result.
 		/// </summary>
-		async Task JsonResult()
+		private async Task JsonResult()
         {
             Media = new List<PinMedia>();
             client = new HttpClient();
 			/// Need to use your access token
-            //string accessUrl = "https://api.instagram.com/v1/users/3032568183/media/recent?access_token=3032568183.ff04465.4ad8960fe586448ea5661b75c081963f";
-            //GetRecentMediaUrl = Client.GetRecentMediaBaseUrl + UserId + Client.GetRecentMediaEndPoint + accessToken;
+            GetRecentMediaUrl = Client.GetRecentMediaBaseUrl + UserId + Client.GetRecentMediaEndPoint + accessToken;
             uri = new Uri(GetRecentMediaUrl);
             result = await client.GetStringAsync(uri);
             RecentMedia = JsonConvert.DeserializeObject<InstagramModel>(result);
@@ -105,28 +112,27 @@ namespace TravelCommunity.Views
             foreach (var item in RecentMedia.data)
             {
                 PinMedia cada = new PinMedia();
-                if (item.images.low_resolution.url != null)
+                if (item.images.standard_resolution.url != null)
                 {
-                    cada.ImageUrl = item.images.low_resolution.url;
+                    cada.ImageUrl = item.images.standard_resolution.url;
                 }
                 if (item.location != null)
                 {
                     cada.Latitude = item.location.latitude;
                     cada.Longitude = item.location.longitude;
                     cada.LocationName = item.location.name;
+                    if (item.caption.text != null)
+                        cada.CaptionText = item.caption.text;
                     Media.Add(cada);
                 }
             }
-            Debug.WriteLine("Performing some startup work that takes a bit of time.");
-            await Task.Delay(3000); // Simulate a bit of startup work.
-            Debug.WriteLine("Startup work is finished - starting MainActivity.");
             FillMap();
         }
 
         /// <summary>
         /// Fills the map.
         /// </summary>
-        void FillMap()
+        private void FillMap()
         {
             customMap.CustomPins = new List<CustomPin>();
             try
@@ -137,7 +143,8 @@ namespace TravelCommunity.Views
                     {
                         Type = PinType.Place,
                         Position = new Position(item.Latitude, item.Longitude),
-                        Label = item.LocationName,
+                        Label = Truncate(item.LocationName,20),
+                        // Label = Truncate(item.CaptionText,20),
                         Id = "Xamarin",
                         Url = item.ImageUrl
 
@@ -145,18 +152,18 @@ namespace TravelCommunity.Views
                     customMap.CustomPins.Add(pin);
                     customMap.Pins.Add(pin);
                 }
-                Content = customMap;
             } 
             catch(Exception ex)
             {
                 Debug.WriteLine(ex.ToString());
             }
+            Content = customMap;
         }
 
         /// <summary>
         /// Creates the content.
         /// </summary>
-        void CreateContent()
+        private void CreateContent()
         {
             container = new Grid
             {
@@ -187,17 +194,16 @@ namespace TravelCommunity.Views
                 HeightRequest = _height
             };
             customMap.MoveToRegion(MapSpan.FromCenterAndRadius(new Position(10.786193, -29.735161), Distance.FromKilometers(100000.0)));
-            //Device.BeginInvokeOnMainThread(async () =>
-            //{
-            //    await JsonResult();
-            //});
             stack.Children.Add(progressView);
             container.Children.Add(customMap);
             container.Children.Add(stack);
             Content = container;
         }
-
-        async Task GetUserID()
+        /// <summary>
+        /// Gets the user identifier.
+        /// </summary>
+        /// <returns>The user identifier.</returns>
+        private async Task GetUserID()
         {
             client = new HttpClient();
             string userIDUrl = TravelCommunity.Resources.Client.GetUserIDUrl + accessToken;
@@ -216,7 +222,21 @@ namespace TravelCommunity.Views
             GetRecentMediaUrl = Client.GetRecentMediaBaseUrl + UserId + Client.GetRecentMediaEndPoint + accessToken;
             await JsonResult();
         }
+        /// <summary>
+        /// Truncate the specified value and maxChars.
+        /// </summary>
+        /// <returns>The truncate.</returns>
+        /// <param name="value">Value.</param>
+        /// <param name="maxChars">Max chars.</param>
+        private string Truncate(string value, int maxChars)
+        {
+            return value.Length <= maxChars ? value : value.Substring(0, maxChars) + "...";
+        }
 
+        private void ShowErrorPage()
+        {
+            
+        }
         #endregion
     }
 }

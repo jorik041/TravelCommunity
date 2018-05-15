@@ -15,12 +15,6 @@
                 <RowDefinition Height="*" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
-            <!--Full fill background image -->
-        <!--    <Image x:Name="BackgroundImage"
-                Source="background.png"
-                Grid.RowSpan="5"
-                Aspect="AspectFill">
-            </Image>-->
             <!-- icon -->
             <Image x:Name="LoginIcon"
                 Grid.Row="1"

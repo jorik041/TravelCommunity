@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Grid xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="TravelCommunity.Test.MKAnnotationViewRenderer"
+      RowSpacing="0"
+      VerticalOptions="Center"
+      HorizontalOptions="Center">
+    <Grid.RowDefinitions>
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="*" />
+    </Grid.RowDefinitions>
+    <Frame
+        Grid.Row="0"
+        CornerRadius="8"
+        Margin="0"
+        Padding="0"
+       
+        IsClippedToBounds="true"
+        HasShadow="true"
+        HeightRequest="200"
+        WidthRequest="160">
+        <Image
+            x:Name="PinImage"
+            Aspect="AspectFill"
+            Source="https://scontent.cdninstagram.com/vp/b1e26ebe7e6431963fe77f8bc8bd16e6/5B79ADA6/t51.2885-15/sh0.08/e35/p640x640/29418195_1564516013659206_2908302469870125056_n.jpg"
+             />
+    </Frame>    
+    <Label 
+        x:Name="CaptionText"
+        Grid.Row="1"
+        WidthRequest="200"
+        LineBreakMode="TailTruncation"
+        VerticalOptions="Start"
+        HorizontalOptions="Center"
+        HorizontalTextAlignment="Start"
+        VerticalTextAlignment="Center"
+        Text="1x❤️😍 🇦🇹 #vienna #wien #österreich #austria #chapter4"/>
+</Grid>

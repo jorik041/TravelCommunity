@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Net.Http;
-using System.Threading.Tasks;
+using TravelCommunity.Custom;
+using TravelCommunity.Helper;
 using TravelCommunity.Models;
 using Xamarin.Forms;
 
@@ -9,93 +9,37 @@ namespace TravelCommunity.Views
 {
     public partial class LoginPage : ContentPage
     {
-        //private HttpClient client;
-        //private InstagramModel RecentMedia;
         private List<PinMedia> PinList { get; set; }
-        //private Uri uri;
-        //private string result;
-        //TapGestureRecognizer _tapGestureRecognizer;
-
 
         public LoginPage()
         {
-            //_tapGestureRecognizer = new TapGestureRecognizer();
-
             InitializeComponent();
 
             NavigationPage.SetHasNavigationBar(this, false);
-
-            //FixButtonSizeDroid();
-
-            //_tapGestureRecognizer.Tapped += async (object sender, EventArgs e) =>
-            //{
-              
-
-            //LoginButton.GestureRecognizers.Add(_tapGestureRecognizer);
         }
 
-		async void OnLoginButtonTapped(object sender, EventArgs e)
+        /// <summary>
+        /// Ons the login button tapped.
+        /// </summary>
+        /// <param name="sender">Sender.</param>
+        /// <param name="e">E.</param>
+		private async void OnLoginButtonTapped(object sender, EventArgs e)
 		{
     		await LoginButton.ScaleTo(0.95, 50, Easing.CubicOut);
             await LoginButton.ScaleTo(1, 50, Easing.CubicIn);
             //LoginButton.IsEnabled = false;
             NavigateToMap();
 		}
-
+        /// <summary>
+        /// Navigates to map.
+        /// </summary>
         private void NavigateToMap()
         {
-            //await JsonResult();
-            //_NavPage = new NavigationPage(new InstagramLogin());
-            //Application.Current.MainPage = new MapPageCS();
-            if(Application.Current.Properties.ContainsKey("access_token"))
-            {
-                App._NavPage = new NavigationPage(new MapPageCS());
-                App.Navigation = App._NavPage.Navigation;
-                Application.Current.MainPage = App._NavPage;
-            } else
-            {
-                App._NavPage = new NavigationPage(new InstagramLogin());
-                App.Navigation = App._NavPage.Navigation;
-                Application.Current.MainPage = App._NavPage;   
-            }
-			
-			//await Navigation.PushModalAsync(_NavPage);
+            DependencyService.Get<IClearCookies>().Clear();
+            App._NavPage = new NavigationPage(new InstagramLogin());
+            App.Navigation = App._NavPage.Navigation;
+            Application.Current.MainPage = App._NavPage;
+
         }
-
-
-        //async System.Threading.Tasks.Task JsonResult()
-        //{
-        //    PinList = new List<PinMedia>();
-
-        //    client = new HttpClient();
-        //    uri = new Uri("https://api.instagram.com/v1/users/217783145/media/recent?access_token=217783145.ff04465.e645f7fa04024ffc922e95d671ab9cab");
-        //    result = await client.GetStringAsync(uri);
-        //    RecentMedia = Newtonsoft.Json.JsonConvert.DeserializeObject<InstagramModel>(result);
-
-        //    foreach (var item in RecentMedia.data)
-        //    {
-        //        PinMedia cada = new PinMedia();
-        //        if (item.images.low_resolution.url != null)
-        //        {
-        //            cada.ImageUrl = item.images.low_resolution.url;
-        //        }
-        //        if (item.location != null)
-        //        {
-        //            cada.Latitude = item.location.latitude;
-        //            cada.Longitude = item.location.longitude;
-        //            cada.LocationName = item.location.name;
-        //            PinList.Add(cada);
-        //        }
-        //    }
-        //}
-
-        private void FixButtonSizeDroid()
-        {
-            if (Device.RuntimePlatform == Device.Android)
-            {
-                LoginButton.HeightRequest = 80;
-            }
-        }
-
     }
 }

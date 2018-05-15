@@ -31,7 +31,7 @@
         <value>217783145</value>
     </data>
     <data name="DefaultAccessToken" xml:space="preserve">
-        <value>217783145.ff04465.e645f7fa04024ffc922e95d671ab9cab</value>
+        <value>217783145.ff04465.186119a5c0c4424da6a1d205141edb52</value>
     </data>
     <data name="GetRecentMediaEndPoint" xml:space="preserve">
         <value>/media/recent?access_token=</value>
