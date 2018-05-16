@@ -12,7 +12,7 @@ using Xamarin.Forms.Platform.iOS;
 [assembly: ExportRenderer(typeof(ImageCircle), typeof(ImageCircleRenderer))]
 namespace TravelCommunity.iOS.Custom
 {
-	/// <summary>
+    /// <summary>
     /// ImageCircle Implementation
     /// </summary>
     //[Preserve(AllMembers = true)]
@@ -21,7 +21,7 @@ namespace TravelCommunity.iOS.Custom
         /// <summary>
         /// Used for registration with dependency service
         /// </summary>
-        public async static void Init()
+        public static new void Init()
         {
             var temp = DateTime.Now;
         }
@@ -46,9 +46,9 @@ namespace TravelCommunity.iOS.Custom
             base.OnElementPropertyChanged(sender, e);
             if (e.PropertyName == VisualElement.HeightProperty.PropertyName ||
                 e.PropertyName == VisualElement.WidthProperty.PropertyName ||
-			    e.PropertyName == ImageCircle.BorderColorProperty.PropertyName ||
-			    e.PropertyName == ImageCircle.BorderThicknessProperty.PropertyName ||
-			    e.PropertyName == ImageCircle.FillColorProperty.PropertyName)
+                e.PropertyName == ImageCircle.BorderColorProperty.PropertyName ||
+                e.PropertyName == ImageCircle.BorderThicknessProperty.PropertyName ||
+                e.PropertyName == ImageCircle.FillColorProperty.PropertyName)
             {
                 CreateCircle();
             }
@@ -58,19 +58,20 @@ namespace TravelCommunity.iOS.Custom
         {
             try
             {
-				var min = Math.Min(Element.Width, Element.Height);
-				if(((ImageCircle)Element).IsRounded)
-				{
-					Control.Layer.CornerRadius = (nfloat)(min / 2.0);
-				} else
-				{
-					Control.Layer.CornerRadius = 0f;
-				}
+                var min = Math.Min(Element.Width, Element.Height);
+                if (((ImageCircle)Element).IsRounded)
+                {
+                    Control.Layer.CornerRadius = (nfloat)(min / 2.0);
+                }
+                else
+                {
+                    Control.Layer.CornerRadius = 0f;
+                }
                 Control.Layer.MasksToBounds = false;
-				Control.BackgroundColor = ((ImageCircle)Element).FillColor.ToUIColor();
+                Control.BackgroundColor = ((ImageCircle)Element).FillColor.ToUIColor();
                 Control.ClipsToBounds = true;
 
-				var borderThickness = ((ImageCircle)Element).BorderThickness;
+                var borderThickness = ((ImageCircle)Element).BorderThickness;
 
                 //Remove previously added layers
                 var tempLayer = Control.Layer.Sublayers?
@@ -82,8 +83,8 @@ namespace TravelCommunity.iOS.Custom
                 externalBorder.Name = borderName;
                 externalBorder.CornerRadius = Control.Layer.CornerRadius;
                 externalBorder.Frame = new CGRect(-.5, -.5, min + 1, min + 1);
-				externalBorder.BorderColor = ((ImageCircle)Element).BorderColor.ToCGColor();
-				externalBorder.BorderWidth = ((ImageCircle)Element).BorderThickness;
+                externalBorder.BorderColor = ((ImageCircle)Element).BorderColor.ToCGColor();
+                externalBorder.BorderWidth = ((ImageCircle)Element).BorderThickness;
 
                 Control.Layer.AddSublayer(externalBorder);
             }

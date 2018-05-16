@@ -49,9 +49,9 @@
                 </StackLayout.GestureRecognizers>
                 <custom:ImageCircle
                     x:Name="LoginImage"
-                    IsRounded="true"
+                    IsRounded="false"
                     BorderThickness="0"
-                    Source="https://scontent.cdninstagram.com/vp/406a7077ab84c596b9560febaddfaaa6/5B797691/t51.2885-19/s150x150/29402824_525644661170130_1505494455107452928_n.jpg"
+                    Source=""
                     Aspect="AspectFit"
                     HorizontalOptions="Center"
                     VerticalOptions="Center"/>
@@ -63,7 +63,7 @@
             </StackLayout>
              <!-- login notification text-->
             <Label x:Name="LoginNotification"
-                    Text="aimorezin 🇧🇷🇩🇪"
+                    Text=""
                     FontSize="14"
                     TextColor="White"
                     Grid.Row="4"

@@ -11,9 +11,10 @@ namespace TravelCommunity.Views
 {
 	public partial class LoginPage : ContentPage
 	{
-		private string UserProfilePic { get; set; }
-		private string UserName { get; set; }
-		private string AccessToken { get; set; }
+        private string UserProfilePic{ get; set; }
+        private string UserName { get; set; }
+        private string AccessToken{ get; set; }
+        private UserModel userData; 
 
 
 		public LoginPage()
@@ -36,6 +37,25 @@ namespace TravelCommunity.Views
    //             LoginNotification.Text = "Login with Instagram";
 			//}
 			NavigationPage.SetHasNavigationBar(this, false);
+
+            if ((Application.Current.Properties.ContainsKey("access_token")))
+            {
+                Application.Current.Properties["access_token"] = AccessToken;
+                if(!string.IsNullOrEmpty(AccessToken))
+                    GetUserInfo();
+            }
+            if((Application.Current.Properties.ContainsKey("profilePicture") && (Application.Current.Properties.ContainsKey("userName"))))
+            {
+                LoginImage.Source = Application.Current.Properties["profilePicture"].ToString();
+                LoginImage.IsRounded = true;
+                LoginNotification.Text = Application.Current.Properties["userName"].ToString();
+            }
+            else
+            {
+                LoginImage.Source = "instagram_logo.png";
+                LoginImage.IsRounded = false;
+                LoginNotification.Text = "Login with Instagram";
+            }
 		}
 
 		/// <summary>
@@ -68,7 +88,7 @@ namespace TravelCommunity.Views
 			string userIDUrl = TravelCommunity.Resources.Client.GetUserIDUrl + AccessToken;
 			Uri userUri = new Uri(userIDUrl);
 			var result = await client.GetStringAsync(userUri);
-			var userData = new UserModel();
+			userData = new UserModel();
 			userData = JsonConvert.DeserializeObject<UserModel>(result);
 			if (userData.data.id != null)
 			{

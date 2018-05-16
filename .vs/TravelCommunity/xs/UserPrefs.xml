@@ -1,20 +1,17 @@
 ﻿<Properties StartupConfiguration="{CBCFFFFA-882E-429D-994A-30E86512B948}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="TravelCommunity/Views/LoginPage.xaml.cs">
-    <Files>
-      <File FileName="TravelCommunity/Views/LoginPage.xaml" Line="59" Column="29" />
-      <File FileName="TravelCommunity/Views/LoginPage.xaml.cs" Line="21" Column="23" />
-    </Files>
-  </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/ais/Desktop/TravelCommunity/TravelCommunity/TravelCommunity/Views/LoginPage.xaml.cs" relfile="TravelCommunity/Views/LoginPage.xaml.cs" line="93" column="1" />
+      <Breakpoint file="/Users/ais/Desktop/TravelCommunity/TravelCommunity/TravelCommunity/Views/LoginPage.xaml.cs" relfile="TravelCommunity/Views/LoginPage.xaml.cs" line="44" column="20" />
+      <Breakpoint file="/Users/ais/Desktop/TravelCommunity/TravelCommunity/iOS/Custom/LoginPageRenderer.cs" relfile="iOS/Custom/LoginPageRenderer.cs" line="40" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />
   <DisabledProjects>
     <String>Droid/TravelCommunity.Droid.csproj</String>
   </DisabledProjects>
-  <MonoDevelop.Ide.ItemProperties.TravelCommunity.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.FACE5AF0-81A1-486C-BE67-D611552341DB">
-    <MonoDevelop.MacDev.AppleDevelopmentTeam />
-  </MonoDevelop.Ide.ItemProperties.TravelCommunity.iOS>
+  <MonoDevelop.Ide.ItemProperties.TravelCommunity.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.d175d792e3dd06f024edb981bd2cc3a2dd708d7f" />
 </Properties>
