@@ -35,20 +35,20 @@
             <!-- login image button-->
             <StackLayout x:Name="LoginButton"
                 Grid.Row="3"
-                Opacity="0.95"
                 HorizontalOptions="CenterAndExpand"
                 VerticalOptions="CenterAndExpand"
                 Spacing="5"
-                HeightRequest="50"
-                WidthRequest="90">
+                HeightRequest="100"
+                WidthRequest="150">
                 <StackLayout.GestureRecognizers>
                     <TapGestureRecognizer
                     Tapped="OnLoginButtonTapped"/>
                 </StackLayout.GestureRecognizers>
                 <custom:ImageCircle
-                    BackgroundColor="Yellow"
+                    HeightRequest="80"
+                    WidthRequest="80"
                     x:Name="LoginImage"
-                    IsRounded="false"
+                    IsRounded="true"
                     BorderThickness="0"
                     Source=""
                     Aspect="AspectFit"
@@ -57,11 +57,10 @@
                       <!-- login notification text-->
                 <Label x:Name="LoginNotification"
                     Text=""
-                    BackgroundColor="Red"
                     FontSize="14"
                     TextColor="White"
                     VerticalOptions="Center"
-                    HorizontalOptions="Start"/>
+                    HorizontalOptions="Center"/>
                 <!--<Image 
                     Source="instagram_logo.png" 
                     Aspect="AspectFit"
