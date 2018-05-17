@@ -1,20 +1,22 @@
 ﻿<Properties StartupConfiguration="{CBCFFFFA-882E-429D-994A-30E86512B948}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="TravelCommunity/Views/LoginPage.xaml.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/Custom/CustomMapRenderer.cs">
     <Files>
-      <File FileName="TravelCommunity/Views/LoginPage.xaml.cs" Line="44" Column="1" />
-      <File FileName="TravelCommunity/Helper/IGetUserStorage.cs" Line="10" Column="13" />
-      <File FileName="iOS/Helper/IUserStorage.cs" Line="21" Column="1" />
+      <File FileName="iOS/Custom/LoginPageRenderer.cs" Line="56" Column="46" />
+      <File FileName="iOS/Helper/IUserStorage.cs" Line="27" Column="48" />
+      <File FileName="TravelCommunity/App.cs" Line="95" Column="1" />
+      <File FileName="TravelCommunity/Views/MapPageCS.cs" Line="37" Column="1" />
+      <File FileName="iOS/Custom/CustomMapRenderer.cs" Line="26" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/ais/Desktop/TravelCommunity/TravelCommunity/iOS/Helper/IUserStorage.cs" relfile="iOS/Helper/IUserStorage.cs" line="12" column="1" />
-      <Breakpoint file="/Users/ais/Desktop/TravelCommunity/TravelCommunity/TravelCommunity/Helper/IGetUserStorage.cs" relfile="TravelCommunity/Helper/IGetUserStorage.cs" line="8" column="1" />
-      <Breakpoint file="/Users/ais/Desktop/TravelCommunity/TravelCommunity/iOS/Custom/LoginPageRenderer.cs" relfile="iOS/Custom/LoginPageRenderer.cs" line="48" column="1" />
-      <Breakpoint file="/Users/ais/Desktop/TravelCommunity/TravelCommunity/iOS/Helper/IUserStorage.cs" relfile="iOS/Helper/IUserStorage.cs" line="24" column="1" />
-      <Breakpoint file="/Users/ais/Desktop/TravelCommunity/TravelCommunity/TravelCommunity/Views/LoginPage.xaml.cs" relfile="TravelCommunity/Views/LoginPage.xaml.cs" line="43" column="1" />
-      <Breakpoint file="/Users/ais/Desktop/TravelCommunity/TravelCommunity/TravelCommunity/Views/LoginPage.xaml.cs" relfile="TravelCommunity/Views/LoginPage.xaml.cs" line="45" column="1" />
+      <Breakpoint file="/Users/ais/Desktop/TravelCommunity/TravelCommunity/TravelCommunity/App.cs" relfile="TravelCommunity/App.cs" line="93" column="1" />
+      <Breakpoint file="/Users/ais/Desktop/TravelCommunity/TravelCommunity/TravelCommunity/App.cs" relfile="TravelCommunity/App.cs" line="94" column="1" />
+      <Breakpoint file="/Users/ais/Desktop/TravelCommunity/TravelCommunity/TravelCommunity/App.cs" relfile="TravelCommunity/App.cs" line="95" column="1" />
+      <Breakpoint file="/Users/ais/Desktop/TravelCommunity/TravelCommunity/iOS/Helper/IUserStorage.cs" relfile="iOS/Helper/IUserStorage.cs" line="27" column="1" />
+      <Breakpoint file="/Users/ais/Desktop/TravelCommunity/TravelCommunity/iOS/Custom/LoginPageRenderer.cs" relfile="iOS/Custom/LoginPageRenderer.cs" line="42" column="1" />
+      <Breakpoint file="/Users/ais/Desktop/TravelCommunity/TravelCommunity/iOS/Custom/LoginPageRenderer.cs" relfile="iOS/Custom/LoginPageRenderer.cs" line="52" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
@@ -22,5 +24,5 @@
   <DisabledProjects>
     <String>Droid/TravelCommunity.Droid.csproj</String>
   </DisabledProjects>
-  <MonoDevelop.Ide.ItemProperties.TravelCommunity.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.2E498C3C-A77B-4446-BCE7-41AAC7442260" />
+  <MonoDevelop.Ide.ItemProperties.TravelCommunity.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.2D1A323A-BA7F-4DDF-A108-CF4C53E3D9EB" />
 </Properties>

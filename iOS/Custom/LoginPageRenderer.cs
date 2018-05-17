@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using Foundation;
 using TravelCommunity.Custom;
 using TravelCommunity.iOS;
@@ -42,9 +43,17 @@ namespace TravelCommunity.iOS
 						//Xamarin.Forms.Application.Current.Properties["access_token"] = token;
                         App.UserAccessToken = token;
                         LoginPage.AccessToken = token;
-                        userStorage.StoreUserData(token, "accessToken");
-                        App.PerformSuccessfulLoginAction();
                         var bb = NSUserDefaults.StandardUserDefaults.StringForKey("accessToken");
+                        try
+                        {
+                            NSUserDefaults.StandardUserDefaults.SetString(token, "accessToken");
+                        } catch(Exception err)
+                        {
+                            Debug.WriteLine(err.Message);
+                        }
+                       
+                        //userStorage.StoreUserData(token, "accessToken");
+                        App.PerformSuccessfulLoginAction();
                     }
                     else
                     {
