@@ -18,7 +18,6 @@ namespace TravelCommunity.iOS
 
         bool IsShown;
         OAuth2Authenticator auth;
-        IUserStorage userStorage;
 		public override void ViewDidAppear(bool animated)
         {
             base.ViewDidAppear(animated);

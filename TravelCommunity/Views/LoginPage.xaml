@@ -12,9 +12,7 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="100" />
                 <RowDefinition Height="200" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
             <!-- icon -->
             <Image x:Name="LoginIcon"
@@ -38,16 +36,17 @@
             <StackLayout x:Name="LoginButton"
                 Grid.Row="3"
                 Opacity="0.95"
-                BackgroundColor="#163285"
-                HorizontalOptions="Center"
-                VerticalOptions="Center"
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="CenterAndExpand"
+                Spacing="5"
                 HeightRequest="50"
-                WidthRequest="80">
+                WidthRequest="90">
                 <StackLayout.GestureRecognizers>
                     <TapGestureRecognizer
                     Tapped="OnLoginButtonTapped"/>
                 </StackLayout.GestureRecognizers>
                 <custom:ImageCircle
+                    BackgroundColor="Yellow"
                     x:Name="LoginImage"
                     IsRounded="false"
                     BorderThickness="0"
@@ -55,21 +54,20 @@
                     Aspect="AspectFit"
                     HorizontalOptions="Center"
                     VerticalOptions="Center"/>
+                      <!-- login notification text-->
+                <Label x:Name="LoginNotification"
+                    Text=""
+                    BackgroundColor="Red"
+                    FontSize="14"
+                    TextColor="White"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Start"/>
                 <!--<Image 
                     Source="instagram_logo.png" 
                     Aspect="AspectFit"
                     HorizontalOptions="Center"
                     VerticalOptions="Center"/>-->
             </StackLayout>
-             <!-- login notification text-->
-            <Label x:Name="LoginNotification"
-                    Text=""
-                    FontSize="14"
-                    TextColor="White"
-                    Grid.Row="4"
-                    VerticalOptions="Start"
-                    HorizontalOptions="Center">
-            </Label>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

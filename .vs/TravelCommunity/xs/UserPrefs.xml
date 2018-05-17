@@ -1,23 +1,13 @@
 ﻿<Properties StartupConfiguration="{CBCFFFFA-882E-429D-994A-30E86512B948}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/Custom/CustomMapRenderer.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/Custom/LoginPageRenderer.cs">
     <Files>
-      <File FileName="iOS/Custom/LoginPageRenderer.cs" Line="56" Column="46" />
-      <File FileName="iOS/Helper/IUserStorage.cs" Line="27" Column="48" />
-      <File FileName="TravelCommunity/App.cs" Line="95" Column="1" />
-      <File FileName="TravelCommunity/Views/MapPageCS.cs" Line="37" Column="1" />
-      <File FileName="iOS/Custom/CustomMapRenderer.cs" Line="26" Column="1" />
+      <File FileName="TravelCommunity/Views/LoginPage.xaml" Line="64" Column="21" />
+      <File FileName="iOS/Custom/LoginPageRenderer.cs" Line="21" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/ais/Desktop/TravelCommunity/TravelCommunity/TravelCommunity/App.cs" relfile="TravelCommunity/App.cs" line="93" column="1" />
-      <Breakpoint file="/Users/ais/Desktop/TravelCommunity/TravelCommunity/TravelCommunity/App.cs" relfile="TravelCommunity/App.cs" line="94" column="1" />
-      <Breakpoint file="/Users/ais/Desktop/TravelCommunity/TravelCommunity/TravelCommunity/App.cs" relfile="TravelCommunity/App.cs" line="95" column="1" />
-      <Breakpoint file="/Users/ais/Desktop/TravelCommunity/TravelCommunity/iOS/Helper/IUserStorage.cs" relfile="iOS/Helper/IUserStorage.cs" line="27" column="1" />
-      <Breakpoint file="/Users/ais/Desktop/TravelCommunity/TravelCommunity/iOS/Custom/LoginPageRenderer.cs" relfile="iOS/Custom/LoginPageRenderer.cs" line="42" column="1" />
-      <Breakpoint file="/Users/ais/Desktop/TravelCommunity/TravelCommunity/iOS/Custom/LoginPageRenderer.cs" relfile="iOS/Custom/LoginPageRenderer.cs" line="52" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />
