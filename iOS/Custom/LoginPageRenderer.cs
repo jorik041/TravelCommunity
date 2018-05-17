@@ -2,6 +2,8 @@
 using Foundation;
 using TravelCommunity.Custom;
 using TravelCommunity.iOS;
+using TravelCommunity.iOS.Helper;
+using TravelCommunity.Views;
 using Xamarin.Auth;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
@@ -15,7 +17,7 @@ namespace TravelCommunity.iOS
 
         bool IsShown;
         OAuth2Authenticator auth;
-
+        IUserStorage userStorage;
 		public override void ViewDidAppear(bool animated)
         {
             base.ViewDidAppear(animated);
@@ -37,9 +39,12 @@ namespace TravelCommunity.iOS
                     {
                         // Use eventArgs.Account to do wonderful things
 						string token = eventArgs.Account.Properties["access_token"].ToString();
-						Xamarin.Forms.Application.Current.Properties["access_token"] = token;
+						//Xamarin.Forms.Application.Current.Properties["access_token"] = token;
                         App.UserAccessToken = token;
+                        LoginPage.AccessToken = token;
+                        userStorage.StoreUserData(token, "accessToken");
                         App.PerformSuccessfulLoginAction();
+                        var bb = NSUserDefaults.StandardUserDefaults.StringForKey("accessToken");
                     }
                     else
                     {
@@ -47,7 +52,6 @@ namespace TravelCommunity.iOS
                         // The user cancelled
                     }
                 };
-
                 var frame = auth.GetUI();
                 PresentViewController(frame, true, null);
 
@@ -56,6 +60,7 @@ namespace TravelCommunity.iOS
                 //frame.View.Bounds = new CoreGraphics.CGRect(100, 100, 80, 30);
 
             }
+          
         }
 }
 

@@ -45,7 +45,7 @@ namespace TravelCommunity
                     scope: "basic",
                     authorizeUrl: "https://api.instagram.com/oauth/authorize/",
                     redirectUrl: "https://aimore.github.io/");
-
+            
             // Hold on to the NavigationPage as a static, so that we can easily access it via App later.
             //_NavPage = new NavigationPage(new InstagramLogin());
             //Navigation = _NavPage.Navigation;

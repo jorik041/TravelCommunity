@@ -59,6 +59,7 @@
       <DependentUpon>ErrorPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Custom\ImageCircle.cs" />
+    <Compile Include="Helper\IGetUserStorage.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\" />
