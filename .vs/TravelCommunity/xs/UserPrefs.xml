@@ -1,5 +1,9 @@
 ﻿<Properties StartupConfiguration="{CBCFFFFA-882E-429D-994A-30E86512B948}|Default">
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="TravelCommunity/Views/MapPageCS.cs">
+    <Files>
+      <File FileName="TravelCommunity/Views/MapPageCS.cs" Line="76" Column="27" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
@@ -9,5 +13,5 @@
   <DisabledProjects>
     <String>Droid/TravelCommunity.Droid.csproj</String>
   </DisabledProjects>
-  <MonoDevelop.Ide.ItemProperties.TravelCommunity.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.2D1A323A-BA7F-4DDF-A108-CF4C53E3D9EB" />
+  <MonoDevelop.Ide.ItemProperties.TravelCommunity.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.2E498C3C-A77B-4446-BCE7-41AAC7442260" />
 </Properties>

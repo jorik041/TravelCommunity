@@ -9,6 +9,7 @@ using TravelCommunity.Models;
 using Xamarin.Forms;
 using Xamarin.Forms.Maps;
 using TravelCommunity.Resources;
+using TravelCommunity.Helper;
 
 namespace TravelCommunity.Views
 {
@@ -18,12 +19,11 @@ namespace TravelCommunity.Views
         private double _height;
         private HttpClient client;
         private CustomMap customMap;
-        AnimationView progressView;
+        private AnimationView progressView;
         private InstagramModel RecentMedia;
-        private UserModel UserData;
         private List<PinMedia> Media { get; set; }
         private Uri uri;
-        Grid container;
+        private Grid container;
         private string result;
         private string UserId { get; set; }
         private string GetRecentMediaUrl { get; set; }
@@ -75,24 +75,16 @@ namespace TravelCommunity.Views
         /// <returns>The user.</returns>
         private async Task CheckUser()
         {
-            if (Application.Current.Properties.ContainsKey("access_token") && !(Application.Current.Properties.ContainsKey("userID")) )
+            var service = DependencyService.Get<IGetUserStorage>();
+
+            if (!string.IsNullOrEmpty(service.RetrieveUserStorage("accessToken"))) 
             {
-                accessToken = Application.Current.Properties["access_token"] as string;
-                await GetUserID();
-                // do something with id
-            }
-            else if(Application.Current.Properties.ContainsKey("access_token") && (Application.Current.Properties.ContainsKey("userID")))
-            {
-                accessToken = Application.Current.Properties["access_token"] as string;
-                UserId = Application.Current.Properties["userID"] as string;
+                accessToken = service.RetrieveUserStorage("accessToken");
                 await JsonResult();
             }
             else
             {
-                //TODO create error page inside navigation go back to login button
-                accessToken = Client.DefaultAccessToken;
-                UserId = Client.DefaultUserID;
-                await JsonResult();
+                ShowErrorPage();
             }
         }
 
@@ -106,7 +98,7 @@ namespace TravelCommunity.Views
     			Media = new List<PinMedia>();
                 client = new HttpClient();
                 /// Need to use your access token
-                GetRecentMediaUrl = Client.GetRecentMediaBaseUrl + UserId + Client.GetRecentMediaEndPoint + accessToken;
+                GetRecentMediaUrl = Client.GetRecentMediaBaseUrl + "self" + Client.GetRecentMediaEndPoint + accessToken;
                 uri = new Uri(GetRecentMediaUrl);
                 result = await client.GetStringAsync(uri);
                 RecentMedia = JsonConvert.DeserializeObject<InstagramModel>(result);
@@ -166,6 +158,7 @@ namespace TravelCommunity.Views
             catch(Exception ex)
             {
                 Debug.WriteLine(ex.ToString());
+                ShowErrorPage();
             }
             Content = customMap;
         }
@@ -209,29 +202,7 @@ namespace TravelCommunity.Views
             container.Children.Add(stack);
             Content = container;
         }
-        /// <summary>
-        /// Gets the user identifier.
-        /// </summary>
-        /// <returns>The user identifier.</returns>
-        private async Task GetUserID()
-        {
-            client = new HttpClient();
-            string userIDUrl = TravelCommunity.Resources.Client.GetUserIDUrl + accessToken;
-            Uri userUri = new Uri(userIDUrl);
-            result = await client.GetStringAsync(userUri);
-            UserData = new UserModel();
-            UserData = JsonConvert.DeserializeObject<UserModel>(result);
-            if (UserData.data.id != null)
-            {
-                UserId = UserData.data.id;
-                Application.Current.Properties["userID"] = UserId;
-            } else
-            {
-                UserId = Client.DefaultUserID;
-            }
-            GetRecentMediaUrl = Client.GetRecentMediaBaseUrl + UserId + Client.GetRecentMediaEndPoint + accessToken;
-            await JsonResult();
-        }
+
         /// <summary>
         /// Truncate the specified value and maxChars.
         /// </summary>
