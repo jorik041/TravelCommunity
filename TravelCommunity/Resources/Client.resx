@@ -13,7 +13,7 @@
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
     <data name="ClientId" xml:space="preserve">
-        <value>ff0446541e3e4fa4b97863b6c3e23638</value>
+        <value></value>
     </data>
     <data name="Scope" xml:space="preserve">
         <value>basic</value>
@@ -31,7 +31,7 @@
         <value>217783145</value>
     </data>
     <data name="DefaultAccessToken" xml:space="preserve">
-        <value>217783145.ff04465.186119a5c0c4424da6a1d205141edb52</value>
+        <value>217</value>
     </data>
     <data name="GetRecentMediaEndPoint" xml:space="preserve">
         <value>/media/recent?access_token=</value>
